@@ -11,10 +11,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+            // Adds the Student Class to the homepage for use
             include('Student.php');
             
+            // Creates a empty array of students
             $students = array();
             
+            // Creation of the first student
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -25,6 +28,7 @@ and open the template in the editor.
             $first->add_grade(55);
             $students['j123'] = $first;
             
+            //Creation of the second student
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -36,6 +40,20 @@ and open the template in the editor.
             $second->add_grade(50);
             $students['a456'] = $second;
             
+            // Creation of the third student
+            $third = new Student();
+            $third->surname = "Wilson";
+            $third->first_name = "Zack";
+            $third->add_email('home', 'Zackw13@hotmail.com');
+            $third->add_grade(90);
+            $third->add_grade(85);
+            $third->add_grade(80);
+            $students['z789'] = $third;
+            
+            // Sorts students into alphabetical order
+            ksort($students);
+            
+            // Foreach loop to display the students on the homepage
             foreach($students as $student)
                 echo $student->toString();
         ?>
