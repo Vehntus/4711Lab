@@ -50,6 +50,16 @@ and open the template in the editor.
             $third->add_grade(80);
             $students['z789'] = $third;
             
+            // Creation of the fourth student
+            $fourth = new Student();
+            $fourth->surname = "Wilson";
+            $fourth->first_name = "Zachary";
+            $fourth->add_email('home', 'Zackw13@hotmail.com');
+            $fourth->add_grade(90);
+            $fourth->add_grade(85);
+            $third->add_grade(80);
+            $students['z012'] = $fourth;
+            
             // Sorts students into alphabetical order
             ksort($students);
             
